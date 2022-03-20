@@ -1,0 +1,56 @@
+.h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.form {
+    &-row {
+        margin-bottom: 10px;
+    }
+    &-label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    &-input,
+    &-textarea,
+    &-select {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 6px 10px;
+        width: 100%;
+    }
+    &-input {
+        &-s {
+            width: 50px;
+        }
+        &-m {
+            width: 100px;
+        }
+    }
+    &-select {
+        width: 100px;
+        position: relative;
+        &:after {
+            content: "";
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+    }
+}
+ 
+.mr-10 {
+    margin-right: 10px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-right {
+    justify-content: end;
+}

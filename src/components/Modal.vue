@@ -2,6 +2,7 @@
    <div class="modal-wrapper" v-if="isOpen">
        <div class="modal">
            <span class="modal-close" @click="closeModal"><svg-icon name="close"></svg-icon></span>
+           <slot></slot>
        </div>
    </div>
 </template>
@@ -9,6 +10,7 @@
 <script>
 export default {
   name: 'AppModal',
+  props: ['title'],
   data: function() {
       return {
           isOpen: false
@@ -51,5 +53,10 @@ export default {
        right: 10px;
        top: 10px;
        cursor: pointer;
+   }
+   .modal-title {
+       font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
    }
 </style>

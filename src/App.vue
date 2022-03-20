@@ -1,7 +1,12 @@
 <template>
   <div id="app">
    <AppHeader @add-task="openTaskModal" />
-   <Modal ref="addTaskModal" />
+   <Modal 
+    ref="addTaskModal"
+    >
+     <h3 class="modal-title">New task</h3>
+      <NewTaskForm />
+   </Modal>
     <div class="todo-list">
       <div class="todo-item">
         <input type="checkbox">
@@ -15,12 +20,14 @@
 <script>
 import AppHeader from '@/components/Header.vue'
 import Modal from '@/components/Modal.vue'
+import NewTaskForm from '@/components/forms/NewTaskForm.vue'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    Modal
+    Modal,
+    NewTaskForm
   },
   methods: {
     openTaskModal() {
