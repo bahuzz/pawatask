@@ -26,31 +26,24 @@
             </select>
         </div>
 
-        <div class="form-row">
-            <label class="form-label">Comment</label>
-            <textarea class="form-textarea" v-model="comment"></textarea>
-        </div>
-
         <div class="form-row flex flex-right">
-            <button class="btn" @click="addTask">Add new task</button>
+            <button class="btn" @click="editTask">Edit task</button>
         </div>
     </form>
 </template>
 
 <script>
     export default {
+        props: ['currentTask'],
         data: function() {
             return {
-                task: {},
-                comment: ''
+                task: this.currentTask
             }
         },
         methods: {
-            addTask(e) {
+            editTask(e) {
                 e.preventDefault()
-                this.task.id = Math.random().toString(36).substr(2, 9)
-                this.task.comments = [this.comment]
-                this.$store.commit('addTask',this.task)
+                this.$store.commit('editTask',this.task)
                 this.$emit('closeModal')
             }
         }

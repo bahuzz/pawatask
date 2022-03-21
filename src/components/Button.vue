@@ -10,12 +10,7 @@
 <script>
 export default {
   name: 'AppButton',
-  props: {
-    onClick: {
-      type: Function,
-      required: true
-    }
-  }
+  props: ['onClick']
  
 }
 </script>
@@ -27,5 +22,6 @@ export default {
     background: rgb(230, 92, 13);
     padding: 10px 15px;
     font-size: .9rem;
+    cursor: pointer;
   }
 </style>

@@ -1,19 +1,15 @@
 <template>
   <div id="app">
    <AppHeader @add-task="openTaskModal" />
+   <TaskList :tasks="$store.state.tasks" />
    <Modal 
     ref="addTaskModal"
     >
      <h3 class="modal-title">New task</h3>
-      <NewTaskForm />
+      <NewTaskForm
+        @closeModal="$refs.addTaskModal.closeModal()"
+      />
    </Modal>
-    <div class="todo-list">
-      <div class="todo-item">
-        <input type="checkbox">
-        <h2 class="todo-item__title">Create todo app</h2>
-        <div class="todo-item__status todo-item__status--medium">Medium</div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -21,13 +17,15 @@
 import AppHeader from '@/components/Header.vue'
 import Modal from '@/components/Modal.vue'
 import NewTaskForm from '@/components/forms/NewTaskForm.vue'
+import TaskList from '@/components/TaskList.vue'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     Modal,
-    NewTaskForm
+    NewTaskForm,
+    TaskList
   },
   methods: {
     openTaskModal() {

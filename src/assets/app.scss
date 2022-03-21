@@ -38,13 +38,42 @@
             top: 5px;
         }
     }
+    &-checkbox {
+        cursor: pointer;
+        content: "";
+        display: inline-block;
+        border: 1px solid #000;
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        &:checked {
+            background-color: rgb(250, 166, 118);
+        }
+    } 
 }
  
 .mr-10 {
     margin-right: 10px;
 }
+
 .mb-10 {
     margin-bottom: 10px;
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+
+b {
+    font-weight: bold;
 }
 
 .flex {
@@ -54,3 +83,15 @@
 .flex-right {
     justify-content: end;
 }
+.flex-justify-between {
+    justify-content: space-between;
+}
+
+.btn {
+    color: #fff;
+    background: rgb(230, 92, 13);
+    padding: 10px 15px;
+    font-size: .9rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
